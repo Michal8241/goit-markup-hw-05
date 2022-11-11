@@ -8,6 +8,7 @@
     --main-silver: #757575;
     --border-white: #ECECEC;
     --border-clients: #AFB1B8;
+    --border-x: rgba(0, 0, 0, 0.1);
 }
 
 body {
@@ -47,6 +48,7 @@ ul,li {
     padding: 0;
 }
 header {
+    /* z-index: -1; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -93,9 +95,9 @@ main {
 .list-filtrs>li>button {
     background-color: var(--second-white);
     padding: 12px 44px; 
-    transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-            background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-            box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 1s cubic-bezier(0.4, 0, 0.2, 1),
+            background-color 1s cubic-bezier(0.4, 0, 0.2, 1),
+            box-shadow 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .list-filtrs>li>button:hover,
@@ -533,12 +535,14 @@ margin-top: 20px;
     justify-content: space-between;
     padding-bottom: 94px;
     
+    
 }
 .client:hover {
     fill: var(--main-blue);
     border-color: var(--main-blue);
-    transition: fill 1s cubic-bezier(0.4, 0, 0.2, 1);
+   
 }
+
 .client {
     border: 1px solid var(--border-clients);
     border-radius: 4px;
@@ -548,6 +552,9 @@ margin-top: 20px;
     justify-content: center;
     align-items: center;
     fill: var(--main-silver);
+    transition: border-color 1s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    
     
 }
 .icon-team {
@@ -556,13 +563,15 @@ margin-top: 20px;
     width: 70%;
     margin-top: 16px;
     margin-bottom: 32px;
+    transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     
     
 }
 .icon-team>a:hover {
     background-color: var(--main-blue);
-    fill: var(--main-white)
+    fill: var(--main-white);
 }
+
 .icon-team>a {
     padding: 10px;
     border-radius: 100%;
@@ -572,6 +581,9 @@ margin-top: 20px;
     justify-content: center;
     align-items: center;
     fill: var(--main-silver);
+    transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    fill 0.25s cubic-bezier(0.4, 0, 0.2, 1)
+    
 }
 .social-footer-icons {
     margin-top: 24px;
@@ -634,6 +646,7 @@ margin-top: 20px;
     width: 99vw;
     height: 100vh;
     background-color: rgba(47, 48, 58, 0.4);
+    z-index: 1;
    
 }
 .pop-window {
@@ -648,9 +661,16 @@ margin-top: 20px;
     
 }
 .pop-window>svg {
+    padding: 10px;
     position: absolute;
     top: 8px;
     right: 8px;
+    border-radius: 100%;
+    cursor: pointer;
+    border: solid 1px var(--border-x);
+    box-sizing: content-box;
+    
+   
 
 }
 .is-hidden {
