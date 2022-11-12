@@ -552,7 +552,8 @@ margin-top: 20px;
     justify-content: center;
     align-items: center;
     fill: var(--main-silver);
-    transition: border-color 1s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: border-color 1s cubic-bezier(0.4, 0, 0.2, 1),
+     fill 1s cubic-bezier(0.4, 0, 0.2, 1);
     
     
     
